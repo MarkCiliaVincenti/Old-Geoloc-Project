@@ -1,0 +1,33 @@
+﻿<nav class="navbar navbar-default navbar-lower" style="width: 98%" role="navigation">
+    <div  >
+        <div class="collapse navbar-collapse collapse-buttons">
+            <form class="navbar-form navbar-left" role="search">
+                <button class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
+                <button title="Ajouter une alerte" class="btn btn-danger btn-sm"><i class="fa fa-bell"></i></button>
+             
+            </form>
+        </div>
+    </div>
+</nav>
+<table id="dgVehicles"  
+       style="width:100%; height: 400px;top: -10px"
+       toolbat="#toolbar-vehicle"
+       pagination="true" 
+       idField="Id"
+       rownumbers="true"   
+       url="@Url.Action("GetListOfVehicls")" 
+       class="easyui-datagrid" 
+       fitColumns="true" 
+       singleSelect="true">
+    <thead>
+    <tr>
+        <th field="VehicleName" width="50" editor="{type:'validatebox',options:{required:true}}"> Nom</th>
+        <th field="Vin" width="50" editor="{type:'validatebox',options:{required:true}}">VIN</th>
+        <th field="LicensePlate" width="50" editor="{type:'validatebox',options:{required:true}}">Immatriculation</th>
+        <th field="VehicleType" width="50" editor="{type:'validatebox',options:{required:true}}">Type</th>
+        <th field="Brand" width="50" editor="{type:'validatebox',options:{required:true}}">Marque</th>
+        <th field="Model" width="50" editor="{type:'validatebox',options:{required:true}}">Modèle</th>
+
+    </tr>
+    </thead>
+</table>

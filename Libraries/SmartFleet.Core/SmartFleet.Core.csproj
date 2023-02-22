@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4938638F-7B72-4632-AE2B-DE790DF79F83}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmartFleet.Core</RootNamespace>
+    <AssemblyName>SmartFleet.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.8.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.4.8.1\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="bbv.Common, Version=7.1.0.0, Culture=neutral, PublicKeyToken=917bca444d1f2b4c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\bbv.Common.7.1.1187.412\lib\.Net 4.0\bbv.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="bbv.Common.DistributedEventBroker, Version=7.1.0.0, Culture=neutral, PublicKeyToken=917bca444d1f2b4c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\bbv.Common.DistributedEventBroker.7.1.1244.2228\lib\Net40\bbv.Common.DistributedEventBroker.dll</HintPath>
+    </Reference>
+    <Reference Include="bbv.Common.DistributedEventBroker.MassTransitAdapter, Version=7.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\bbv.Common.DistributedEventBroker.MassTransitAdapter.7.2.12149.1635\lib\Net40\bbv.Common.DistributedEventBroker.MassTransitAdapter.dll</HintPath>
+    </Reference>
+    <Reference Include="bbv.Common.EventBroker, Version=7.1.0.0, Culture=neutral, PublicKeyToken=917bca444d1f2b4c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\bbv.Common.EventBroker.7.1.0.0\lib\NET4\bbv.Common.EventBroker.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=6.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FluentValidation.6.2.1.0\lib\Net45\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="GreenPipes, Version=2.1.2.111, Culture=neutral, PublicKeyToken=b800c4cfcdeea87b, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GreenPipes.2.1.2\lib\net452\GreenPipes.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Magnum, Version=2.0.0.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\bbv.Common.DistributedEventBroker.MassTransitAdapter.7.2.12149.1635\lib\Net40\Magnum.dll</HintPath>
+    </Reference>
+    <Reference Include="MassTransit, Version=5.0.0.1475, Culture=neutral, PublicKeyToken=b8e0e9f2f1e657fa, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MassTransit.5.0.0\lib\net452\MassTransit.dll</HintPath>
+    </Reference>
+    <Reference Include="MassTransit.AzureServiceBusTransport, Version=5.0.0.1475, Culture=neutral, PublicKeyToken=b8e0e9f2f1e657fa, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MassTransit.AzureServiceBus.5.0.0\lib\net452\MassTransit.AzureServiceBusTransport.dll</HintPath>
+    </Reference>
+    <Reference Include="MassTransit.EntityFrameworkIntegration, Version=5.0.0.1475, Culture=neutral, PublicKeyToken=b8e0e9f2f1e657fa, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MassTransit.EntityFramework.5.0.0\lib\net452\MassTransit.EntityFrameworkIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="MassTransit.RabbitMqTransport, Version=5.0.0.1475, Culture=neutral, PublicKeyToken=b8e0e9f2f1e657fa, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MassTransit.RabbitMQ.5.0.0\lib\net452\MassTransit.RabbitMqTransport.dll</HintPath>
+    </Reference>
+    <Reference Include="MassTransit.Transports.MSMQ, Version=2.10.0.0, Culture=neutral, PublicKeyToken=b8e0e9f2f1e657fa, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MassTransit.MSMQ.2.10.2\lib\net40\MassTransit.Transports.MSMQ.dll</HintPath>
+    </Reference>
+    <Reference Include="MediatR, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MediatR.5.1.0\lib\net45\MediatR.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Diagnostics.Tracing.EventSource, Version=1.1.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.28\lib\net40\Microsoft.Diagnostics.Tracing.EventSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Host.SystemWeb.2.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ServiceBus, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WindowsAzure.ServiceBus.4.1.11\lib\net45\Microsoft.ServiceBus.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.WindowsAzure.ConfigurationManager.3.2.3\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="NewId, Version=3.0.1.17, Culture=neutral, PublicKeyToken=b8e0e9f2f1e657fa, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NewId.3.0.1\lib\net452\NewId.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.Bson, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.Bson.1.0.1\lib\net45\Newtonsoft.Json.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMQ.Client, Version=5.0.0.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RabbitMQ.Client.5.0.1\lib\net451\RabbitMQ.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RestSharp.105.2.3\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="StackExchange.Redis.StrongName, Version=1.2.6.0, Culture=neutral, PublicKeyToken=c219ff1ca8c2ce46, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\StackExchange.Redis.StrongName.1.2.6\lib\net45\StackExchange.Redis.StrongName.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseEntity.cs" />
+    <Compile Include="Contracts\Commands\CeateGpsStatement.cs" />
+    <Compile Include="Contracts\Commands\CreateBoxCommand.cs" />
+    <Compile Include="Contracts\Commands\CreateTeltonikaGps.cs" />
+    <Compile Include="Contracts\Commands\CreateNewBoxGps.cs" />
+    <Compile Include="Contracts\Commands\CreateTk103Gps.cs" />
+    <Compile Include="Contracts\Commands\SmartFleetCommand.cs" />
+    <Compile Include="Contracts\Commands\TLEcoDriverAlertEvent.cs" />
+    <Compile Include="Contracts\Commands\TLExcessSpeedEvent.cs" />
+    <Compile Include="Contracts\Commands\TlFuelEevents.cs" />
+    <Compile Include="Contracts\Commands\TLFuelMilstoneEvent.cs" />
+    <Compile Include="Contracts\Commands\TLGpsDataEvent.cs" />
+    <Compile Include="Contracts\Commands\TLGpsDataEvents.cs" />
+    <Compile Include="Contracts\Commands\TLMilestoneVehicleEvent.cs" />
+    <Compile Include="Contracts\Commands\TNIoProperty.cs" />
+    <Compile Include="Contracts\Commands\TlIdentifierEvent.cs" />
+    <Compile Include="Data\Enums\DbContextScopeOption.cs" />
+    <Compile Include="Data\IAmbientDbContextLocator.cs" />
+    <Compile Include="Data\IDbContextCollection.cs" />
+    <Compile Include="Data\IDbContextFactory.cs" />
+    <Compile Include="Data\IDbContextReadOnlyScope.cs" />
+    <Compile Include="Data\IDbContextScope.cs" />
+    <Compile Include="Data\IDbContextScopeFactory.cs" />
+    <Compile Include="Data\IRepository.cs" />
+    <Compile Include="Data\IScopeRepository.cs" />
+    <Compile Include="Domain\Customers\Customer.cs" />
+    <Compile Include="Domain\Customers\InterestArea.cs" />
+    <Compile Include="Domain\EcoDrive\AlarmType.cs" />
+    <Compile Include="Domain\EcoDrive\VehicleAlarrm.cs" />
+    <Compile Include="Domain\Gpsdevices\Box.cs" />
+    <Compile Include="Domain\Gpsdevices\Sim.cs" />
+    <Compile Include="Domain\DriverCards\Identifier.cs" />
+    <Compile Include="Domain\Movement\GpSdata.cs" />
+    <Compile Include="Domain\Movement\Position.cs" />
+    <Compile Include="Domain\Users\User.cs" />
+    <Compile Include="Domain\Vehicles\Brand.cs" />
+    <Compile Include="Domain\Vehicles\Driver.cs" />
+    <Compile Include="Domain\Vehicles\FuelConsumption.cs" />
+    <Compile Include="Domain\Vehicles\Model.cs" />
+    <Compile Include="Domain\Vehicles\Vehicle.cs" />
+    <Compile Include="Domain\Vehicles\VehicleAlert.cs" />
+    <Compile Include="Domain\Vehicles\VehicleEvent.cs" />
+    <Compile Include="Domain\Vehicles\VehicleStatus.cs" />
+    <Compile Include="Domain\Vehicles\VehicleType.cs" />
+    <Compile Include="Extension\ObjectExtension.cs" />
+    <Compile Include="Geofence\GeofenceHelper.cs" />
+    <Compile Include="Helpers\Commonhelper.cs" />
+    <Compile Include="Helpers\StringExtension.cs" />
+    <Compile Include="IMicroService.cs" />
+    <Compile Include="Infrastructure\MassTransit\MicroServicesLoader.cs" />
+    <Compile Include="Infrastructure\MassTransit\RabbitMqConfig.cs" />
+    <Compile Include="Infrastructure\Registration\IDependencyRegistrar.cs" />
+    <Compile Include="Infrastructure\Registration\Resolver.cs" />
+    <Compile Include="IFMParserProtocol.cs" />
+    <Compile Include="ITK1003Parser.cs" />
+    <Compile Include="Protocols\NewBox\NewBoxParser.cs" />
+    <Compile Include="Protocols\Teltonika\FmXXXXParser.cs" />
+    <Compile Include="Protocols\Teltonika\Gh3000Parser.cs" />
+    <Compile Include="Protocols\DevicesParser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Protocols\Tk1003\Tk1003Parser.cs" />
+    <Compile Include="ReverseGeoCoding\Dtos\Address.cs" />
+    <Compile Include="ReverseGeoCoding\Dtos\LocationiqResponse.cs" />
+    <Compile Include="ReverseGeoCoding\Dtos\NominatimResult.cs" />
+    <Compile Include="ReverseGeoCoding\ReverseGeoCodingService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

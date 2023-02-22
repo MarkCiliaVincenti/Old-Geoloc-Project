@@ -1,0 +1,46 @@
+﻿<nav class="navbar navbar-default navbar-lower" style="width: 98%" role="navigation">
+    <div>
+        <div class="collapse navbar-collapse collapse-buttons">
+            <form class="navbar-form navbar-left" role="search">
+                <button  ng-click="addZone()" class="btn btn-default btn-sm"><i class="fa fa-plus"></i></button>
+
+                <button class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
+                <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+
+            </form>
+        </div>
+    </div>
+</nav>
+
+<table id="dg"  
+       style="width:100%;height:380px"
+       toolbar="#toolbar" 
+       pagination="true" idField="Id"
+       rownumbers="true"
+       url="@Url.Action("GetZones")"
+       class="easyui-datagrid" 
+       fitColumns="true" 
+       singleSelect="true">
+        <thead>
+        <tr>
+            <th field="Name" width="50" editor="{type:'validatebox',options:{required:true}}"> Zone</th>
+            <th field="Country" width="50" editor="{type:'validatebox',options:{required:true}}">Pays</th>
+            <th field="State" width="50" editor="{type:'validatebox',options:{required:true}}">Département</th>
+            <th field="Street" width="50" editor="{type:'validatebox',options:{required:true}}">Adresse</th>
+            <th field="Latitude" width="50" editor="{type:'validatebox',options:{required:true}}">Latitude</th>
+            <th field="Longitude" width="50" editor="{type:'validatebox',options:{required:true}}">Longitude</th>
+
+        </tr>
+        </thead>
+
+    </table>
+
+<div id="zone-win"   class="easyui-window" data-options="left:320,top:20" title="Nouvelle zone" style=" bottom: 0; padding: 10px; width: 40%; height: 500px;z-index: 1001">
+
+        @{
+            Html.RenderPartial("_Create");
+        }
+
+</div>
+
+

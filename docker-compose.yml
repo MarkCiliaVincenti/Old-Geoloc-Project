@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  gt02aserver:
+    image: gt02aserver
+    build:
+      context: .\Test\GT02AServer
+      dockerfile: Dockerfile

@@ -1,0 +1,38 @@
+﻿@using SmartFleet.Resources
+<style>
+    .ui-widget-header {
+        border-color: transparent !important;
+        background: whitesmoke !important;
+    }
+</style>
+
+
+<div style="margin-top: 100px;" id="daily-report">
+    <div id="tt" class="easyui-tabs" >
+        <div title="@Resource.Synthesis"  style="padding: 15px; height: 150%" data-options="iconCls:'icon-reload'" >
+            @{
+                Html.RenderPartial("_Synthesis");
+            }
+        </div>
+        <div title="@Resource.Activities" style="padding: 20px; ">
+            <div id="act" style="padding: 15px">
+
+                @{
+                    Html.RenderPartial("_Targets");
+                }
+
+            </div>
+        </div>
+        
+    </div>
+   
+
+
+
+
+</div>
+<script>
+    $(document).ready(function() {
+        $('#tt').tabs();
+    });;
+</script>

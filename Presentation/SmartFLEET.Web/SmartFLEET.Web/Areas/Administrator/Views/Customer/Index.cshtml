@@ -1,0 +1,85 @@
+﻿@model IEnumerable<SmartFleet.Core.Domain.Customers.Customer>
+
+<div class="box" style=" padding:10px" ng-controller="customerController">
+    <h3>Liste des clients</h3>
+<hr/>
+    <div>
+        <a  data-toggle="modal" class="btn btn-default" ui-sref="AddCustomer" >
+            Nouveau client
+        </a>
+    </div>
+    <br/>
+    <br/>
+   
+    <table id="customer-list" class="table table-bordered table-striped table-responsive">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tel)
+                </th>
+               
+                <th>
+                    @Html.DisplayNameFor(model => model.Country)
+                </th>
+               
+                <th>
+                    @Html.DisplayNameFor(model => model.CustomerStatus)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreationDate)
+                </th>
+               
+            </tr>
+
+        </thead>
+       
+
+    </table>
+    <script>
+        $(document).ready(function() {
+            $('#customer-list').DataTable({
+                "processing": true,
+                "serverSide": true,
+                "ajax": {
+                    "url": '@Url.Action("GetCustomers")',
+                    "type": "POST"
+                },
+                "columns": [
+                    {
+                        "data": "Name" ,
+                        "render": function (data, type, row, meta) {
+                            console.log(row.Id);
+                            return '<a  ui-sref="customerDetail({customerId:\'' + row.Id + '\'})"> ' + data + '</a>';
+                        }
+                    },
+                    { "data": "Email" },
+                    { "data": "Tel" },
+                    { "data": "Country" },
+                    { "data": "CustomerStatus" },
+                    { "data": "CreationDate" }
+                  
+                ],
+                "fnRowCallback": function (nRow, aData, iDisplayIndex) {
+
+                    var $injector = angular.element(document.body).injector();
+                    var scope = angular.element(document.body).scope();
+            
+                    $injector.invoke(function($compile) {
+                        $compile(nRow)(scope);
+                    });
+            
+                },
+                
+            } );
+        } );
+    </script>
+    @{
+        Html.RenderPartial("_CreateModel");
+    }
+</div>

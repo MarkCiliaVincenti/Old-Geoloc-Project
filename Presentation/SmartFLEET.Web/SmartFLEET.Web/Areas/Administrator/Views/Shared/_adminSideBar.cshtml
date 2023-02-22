@@ -1,0 +1,70 @@
+﻿<section class="sidebar">
+<!-- Sidebar user panel -->
+<!-- search form -->
+
+<!-- /.search form -->
+<!-- sidebar menu: : style can be found in sidebar.less -->
+<ul class="sidebar-menu">
+    <li class="header">MENU</li>
+    @if (User.IsInRole("admin"))
+    {
+        <li class="treeview">
+            <a href="#">
+                <i class="fa fa-users"></i>
+                <span>Gestion des utilisateurs</span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li><a ui-sref="customers">Clients</a></li>
+                <li><a ui-sref="users">Utilisateurs</a></li>
+
+            </ul>
+        </li>
+    }
+    <li class="treeview">
+        <a href="#">
+            <i class="fa fa-wifi"></i>
+            <span>Boitiers GPS </span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a ui-sref="boxes">Botiers</a></li>
+        
+        </ul>
+    </li>
+
+    <li class="treeview">
+        <a href="#">
+            <i class="fa fa-car"></i>
+            <span>Véhicules</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+            <li><a ui-sref="vehicles"> <i class="fa  fa-list"></i> Liste des véhicules</a></li>
+        </ul>
+    </li>
+
+  <li class="treeview">
+    <a href="#">
+      <i class="fa fa-id-card"></i>
+      <span>Conducteurs</span>
+      <span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+      </span>
+    </a>
+    <ul class="treeview-menu">
+      <li><a href="@Url.Action("CreateOrUpdate", "Mouvement")">Nouveau Mouvement</a></li>
+      <li><a href="@Url.Action("Index", "Mouvement")">Liste des Mouvements</a></li>
+
+    </ul>
+  </li>
+
+  
+</ul>
+</section>

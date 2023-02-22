@@ -1,0 +1,61 @@
+﻿@using SmartFleet.Resources
+<div class="box" style="padding: 10px">
+    <h4>@Resource.AddMobileUnit </h4>
+    <hr />
+    <form name="mobileUnitForm" class="form-horizontal">
+        <fieldset>
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="Name">IMEI</label>
+                <div class="col-md-5">
+                    <input id="Name" ng-model="mobileUnit.Imei" ng-required="true" name="Name" type="text" placeholder="" class="form-control input-md">
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="Tel">Serial Number</label>
+                <div class="col-md-5">
+                    <input  ng-model="mobileUnit.SerialNumber"  name="Tel" type="text" placeholder="" class="form-control input-md">
+
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="Tel">Phone Number</label>
+                <div class="col-md-5">
+                    <input  ng-model="mobileUnit.PhoneNumber"  name="Tel" type="text" placeholder="" class="form-control input-md">
+
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">ICCID</label>
+                <div class="col-md-5">
+                    <input validate-email ng-model="mobileUnit.ICCID"  placeholder="" class="form-control input-md">
+
+                </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="Country">Brand</label>
+                <div class="col-md-5">
+                    <select  ng-model="mobileUnit.Brand" ng-options="o as o for o in Brands" class="form-control">
+                      
+                    </select>
+                </div>
+            </div>
+        </fieldset>
+       <div class="modal-footer">
+            <button type="button" class="btn btn-success" ng-click="onValidate(mobileUnit)">Valider</button>
+
+            <button type="button" ui-sref="boxes" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+    </form>
+
+</div>
+<script>
+    $('select').select2({
+        width:'220'
+    });
+</script>

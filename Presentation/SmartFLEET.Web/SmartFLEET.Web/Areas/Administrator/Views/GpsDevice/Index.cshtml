@@ -1,0 +1,106 @@
+﻿@model IEnumerable<SmartFleet.MobileUnit.Domain.MobileUnit.Dtos.MobileUnitDto>
+
+<div class="box" style=" padding:10px" ng-controller="mobileUnitController">
+    <h3>Liste des boitiers</h3>
+
+    <p>
+
+        <div class="col-md-12">
+            <div class="panel panel-default" style="margin-top: 5px">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a  data-toggle="modal" class="btn btn-default" ui-sref="AddMobileUnit" >
+                            Add GPS device
+                        </a>
+
+                    </li>
+                </ul>
+            </div>
+            <input type="hidden" id="dicID" value="0" />
+            <table id="dicTable" class="table table-bordered table-striped w100f" cellspacing="0"></table>
+        </div>
+    </p>
+    <table id="box-list" class="table table-bordered table-hover table-striped table-responsive">
+        <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Imei)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SerialNumber)
+            </th>
+
+            <th>
+                Vehicle
+            </th>
+
+            <th>
+               Customer
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.LastGpsInfoTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Brand)
+            </th>
+            <th>
+               State
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+
+        @foreach (var item in Model)
+        {
+            var creationDate = item.CreationDate.HasValue ? item.CreationDate.Value.ToShortDateString() : "";
+           <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Imei)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SerialNumber)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.VehicleName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerName)
+                </td>
+                <td>
+                    @creationDate
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastGpsInfoTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Brand)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BoxStatus)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new {id = item.Id}) 
+                 </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('#box-list').DataTable();
+    })
+</script>

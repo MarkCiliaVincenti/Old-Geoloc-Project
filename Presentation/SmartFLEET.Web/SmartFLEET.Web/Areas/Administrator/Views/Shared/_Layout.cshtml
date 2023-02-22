@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html ng-app="smart-admin">
+<head>
+    <title>@Page.Title</title>
+    @Scripts.Render("~/bundles/jquery")
+    @Styles.Render("~/Content/cssadmin")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jsAdmin")
+    @Scripts.Render("~/bundles/jsApp")
+    <script src="~/Scripts/app/adminApp.js"></script>
+    <script src="~/Scripts/app/customer/customerService.js"></script>
+    <script src="~/Scripts/app/user/userService.js"></script>
+    <script src="~/Scripts/app/vehicle/vehicleService.js"></script>
+    <script src="~/Scripts/app/mobileUnit/mobileUnitService.js"></script>
+    <script src="~/Scripts/app/vehicle/vehicleController.js"></script>
+    <script src="~/Scripts/app/mobileUnit/mobileUnitController.js"></script>
+    <script src="~/Scripts/app/mobileUnit/addMobileUnitController.js"></script>
+    <script src="~/Scripts/app/vehicle/vehicleDetailController.js"></script>
+    <script src="~/Scripts/app/vehicle/addVehicleController.js"></script>
+    <script src="~/Scripts/app/customer/addCustomerController.js"></script>
+    
+    <link href="~/dist/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="~/Scripts/app/user/userController.js"></script>
+    <script src="~/Scripts/app/customer/customerController.js"></script>
+    
+
+    <script src="~/Scripts/app/customer/customerDetailController.js"></script>
+    <link href="~/Content/jquery-ui.min.css" rel="stylesheet" />
+    <style>
+        input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+            border: 2px solid red;
+
+        }
+        .modal-header {
+            background-color: #3c8dbc;
+            color:whitesmoke
+                              
+        }
+        
+    </style>
+</head>
+
+<body   class="hold-transition skin-blue-light  sidebar-mini" style="font-size: 13px;">
+<header class="main-header">
+    @{
+        Html.RenderPartial("_AdminNavBar");
+    }
+</header>
+
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    @{
+        Html.RenderPartial("_adminSideBar");
+    }
+    <!-- /.sidebar -->
+</aside>
+
+
+<div class="content-wrapper">
+    <div class="" style="font-size: 13px">
+        @RenderBody()
+    </div>
+    <hr />
+    
+</div>
+
+
+
+
+
+</body>
+</html>

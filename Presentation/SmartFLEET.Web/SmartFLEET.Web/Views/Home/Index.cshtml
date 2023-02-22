@@ -1,0 +1,70 @@
+﻿@using System.Globalization
+@using System.Threading
+@using SmartFleet.Resources
+@using SmartFLEET.Web.Helpers
+<style>
+    .jbox-t {
+        margin-top: -23px !important;
+        margin-left: -10px !important;
+    }
+
+    #TabPanelPosition {
+        position: absolute;
+        z-index: 1000;
+        margin-top: -180px;
+    }
+
+    .leaflet-marker-icon {
+        margin-top: -16px
+    }
+
+    .leaflet-pane .leaflet-popup-pane {
+        margin-top: -16px
+    }
+
+    .ui-layout-resizer, .ui-layout-center, .ui-layout-west {
+        top: 50px !important
+    }
+</style>
+<link href="~/dist/plugins/select2/select2.bootstrap.css" rel="stylesheet" />
+<link href="~/dist/plugins/select2/select2.min.css" rel="stylesheet" />
+<link href="~/Scripts/easyui/themes/default/calendar.css" rel="stylesheet" />
+@{
+    Html.RenderPartial("_menu");
+    Html.RenderPartial("_map");
+    Html.RenderPartial("_leftPanel");
+}
+
+@{
+
+    var JSONResx = ResourcesHelper.GenerateResxJSON<Resource>(); ;
+
+
+}
+
+
+
+
+
+
+
+@section scripts
+{
+    <script src="~/signalr/hubs"></script>
+
+    <script src="~/Scripts/app/report/reportService.js"></script>
+    <script src="~/Scripts/app/report/reportController.js"></script>
+    <script src="~/Scripts/app/position/positionService.js"></script>
+    <script src="~/Scripts/app/position/positionController.js"></script>
+    <script src="~/Scripts/app/home/homeScript.js"></script>
+    <script src="~/Scripts/app/home/leftPannel.js"></script>
+    <script src="~/Scripts/app/home/gpsTimeLine.js"></script>
+    <script src="~/Scripts/app/settings/addzoneController.js"></script>
+    <script>
+        var localization;
+        $(document).ready(function() {
+            localization =@Html.Raw(JSONResx);
+        });
+       
+    </script>
+}

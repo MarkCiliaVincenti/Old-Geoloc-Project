@@ -1,0 +1,36 @@
+﻿@using SmartFleet.Resources
+<div class="ui-layout-west" style="; width: 300px;margin:10px">
+    
+    
+    <div class="input-group" style="margin:-5px">
+        <input type="text" class="form-control" placeholder="@Resource.Search ..." id="search-tree">
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="button" id="btn-search">Ok</button>
+        </span>
+    </div>
+    <nav id="left-panel" style="margin-top: 10px;overflow: auto; position: relative; height: 60%" role="navigation">
+
+        <div id="container">
+
+        </div>
+    </nav>
+    
+    <select style="width: 250px; margin-top: -12px" id="period-choice">
+        <option value="CD">@Resource.CurrentDate</option>
+        <option value="YD">@Resource.Yesterday</option>
+        <option value="D">@Resource.Date</option>
+        <option value="P">@Resource.Period</option>
+    </select>
+    @{
+        Html.RenderPartial("_Period");
+    }
+    <div id="position-scope" ng-controller="positionController">
+       
+    </div>   
+    <div class="easyui-window" id="prg-wwin">
+        <div id="prgBar" class="easyui-progressbar" style="width:400px;"></div>
+    </div>
+</div>
+<script>
+   
+</script>

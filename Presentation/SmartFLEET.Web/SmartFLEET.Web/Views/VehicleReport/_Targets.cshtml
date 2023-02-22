@@ -1,0 +1,72 @@
+﻿@using SmartFleet.Resources
+
+<style>
+    .stop-flag {
+        color: red
+    }
+    .move-flag {
+        color: green
+    }
+</style>
+<table id="report-tbl" class="table table-bordered table-striped" >
+    <thead>
+    <tr>
+        <th field="MotionStatus">
+            @Resource.MotionState
+        
+        </th>
+
+        <th  field="StartPeriod1">
+            @Resource.DepartureTime
+        </th>
+        <th field="EndPeriod1">
+            @Resource.ArrivalTime
+        </th>
+        <th field="Distance">
+            @Resource.Distance (Km)
+        </th>
+     
+        <th field="StartAddres">
+           @Resource.DepartureAddress
+        </th>
+        <th field="ArrivalAddres">
+            @Resource.ArrivalAddress
+        </th>
+        <th field="Duration">
+            @Resource.Duration
+        </th>
+    </tr>
+    </thead>
+
+    <tr ng-repeat="item in targetList">
+        <td>
+            <i class="fa fa-flag" ng-class="item.MotionStatus=='Arrêt'?'stop-flag': 'move-flag'"></i> {{item.MotionStatus}}
+        </td>
+
+        <td>
+           {{item.StartPeriod1}}
+        </td>
+        <td>
+            {{item.EndPeriod1}}
+        </td>
+        <td>
+            {{item.Distance}}
+        </td>
+       
+       
+        
+        <td style="max-width: 100px">
+            {{item.StartAddres}}
+        </td>
+        <td style="max-width: 100px">
+            {{item.ArrivalAddres}}
+        </td>
+        <td>
+            {{item.Duration}}
+        </td>
+       
+
+        </tr>
+
+
+</table>

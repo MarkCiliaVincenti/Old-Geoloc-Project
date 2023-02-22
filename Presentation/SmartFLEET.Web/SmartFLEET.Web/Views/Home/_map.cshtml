@@ -1,0 +1,24 @@
+﻿<div id="Modal-2" ui-view class="ui-layout-center "  style=" height: 100%;width: 100%">
+    
+    <div id="map" class="map" style="height: 94%; width: 100%; position: relative; overflow: hidden;">
+        <input type="hidden" value="@ViewBag.GroupName" id="client-group"/>
+        
+    </div>
+    <div id="chronogram" class="easyui-window"  data-options="left:320,top:20" title="Activités" style=" bottom: 0; padding: 10px; width: 76%; height: 260px;z-index: 1001">
+
+        @{
+            Html.RenderAction("GetCurrentposition", "Position");
+        }
+    </div>
+    <div id="report-win"   class="easyui-window" data-options="left:320,top:20" title="Rapport" style=" bottom: 0; padding: 10px; width: 76%; height: 90%;z-index: 1001">
+
+        <div class="col-md-12" id="gps-activity-2" style="width: 99%; height: 100px"></div>
+    </div>
+    <div id="report-content" ng-controller="reportController">
+       
+     
+        
+    </div>
+    @RenderPage("_settings.cshtml")
+   
+</div>

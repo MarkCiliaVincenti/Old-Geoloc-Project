@@ -1,0 +1,34 @@
+﻿<div class="row" style="margin: 10px">
+    <div class="col-md-6">
+        <label f>Nom</label>
+        <input ng-model="zone.Name" type="text" class="form-control"  >
+        <label f>Pays</label>
+        <input ng-model="zone.Country" type="text" class="form-control"  >
+        <label f>Département</label>
+        <input ng-model="zone.State"  type="text" class="form-control"  >
+        <label f>Adresse</label>
+        <textarea ng-model="zone.Street" class="form-control"  ></textarea>
+
+    </div>
+    
+    <div class="col-md-6">
+        <label f>Rayon</label>
+        <input ng-model="zone.Radius" type="number" class="form-control"  >
+
+        <label f>Latitude</label>
+        <input ng-model="zone.Latitude" type="number" class="form-control" >
+        <label f>Longitude</label>
+        <input ng-model="zone.Longitude" type="number" class="form-control" >
+
+
+    </div>
+</div>
+<br />
+<div id="dlg-buttons">
+    <a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" ng-click="saveZone()" style="width:90px">Save</a>
+
+</div>
+<br/>
+<div id="map2" class="map" style="height: 90%; width: 100%; position: relative; overflow: hidden;">
+         
+</div>

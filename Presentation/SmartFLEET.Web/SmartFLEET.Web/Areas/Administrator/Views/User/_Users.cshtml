@@ -1,0 +1,41 @@
+﻿@using SmartFLEET.Web.HtmlHelpers
+
+<style>
+    warning{
+        border:1px solid red;
+    }
+</style>
+<a  data-toggle="modal" class="btn btn-success" ng-click="loadUser()" >
+    <i class="fa fa-plus"></i> Compte
+</a>
+<br>
+<br>
+<table id="user-list" class="table table-bordered table-striped table-responsive">
+    <thead>
+    <tr>
+        <th>
+            UserName
+        </th>
+        <th>
+            Email
+        </th>
+
+        <th>
+            PhoneNumber
+        </th>
+
+        <th>
+            TimeZoneInfo
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+
+    <tr ng-repeat="x in users">
+        <td>{{ x.UserName }}</td>
+        <td>{{ x.Email }}</td>
+        <td>{{ x.PhoneNumber }}</td>
+        <td>{{ x.TimeZoneInfo }}</td>
+    </tr>
+    @Html.BootstrapModalAngular("add-user","Nouvel utilisateur","<new-user></new-user>","userForm")
+</table>

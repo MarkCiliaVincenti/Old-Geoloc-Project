@@ -1,0 +1,60 @@
+﻿@model SmartFleet.Core.Domain.Customers.Customer
+
+<div class="box" style="padding: 10px; height:100%"  ng-controller="customerDetailController">
+    <h3>Détail Client</h3>
+    <input type="hidden" ng-model="id" id="customerid"/>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            {{customer.Name}}
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerStatus)
+        </dt>
+
+        <dd>
+            {{customer.CustomerStatus}}
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            {{customer.Email}}
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Country)
+        </dt>
+
+        <dd>
+            {{customer.Country}}
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </dt>
+
+        <dd>
+            {{customer.CreationDate }}
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tel)
+        </dt>
+
+        <dd>
+            {{customer.Tel}}
+        </dd>
+
+    </dl>
+   
+    
+    <list-vehicle></list-vehicle>
+
+</div>
